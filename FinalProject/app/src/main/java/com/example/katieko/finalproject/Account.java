@@ -1,0 +1,58 @@
+package com.example.katieko.finalproject;
+
+
+import java.util.ArrayList;
+
+/**
+ * Created by katieko on 4/18/17.
+ */
+
+public class Account {
+    private String fullName;
+    private String username;
+    private String email;
+    private double balance;
+    private String uid;
+    private ArrayList<String> plans;
+
+    public Account() {
+        plans = new ArrayList<>();
+    }
+
+    public Account(String fullName, String username, String email, double balance, String uid) {
+        this.fullName = fullName;
+        this.username = username;
+        this.email = email;
+        this.balance = balance;
+        this.uid = uid;
+        plans = new ArrayList<>();
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setBalance(double newBalance) {
+        this.balance = newBalance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public ArrayList<String> getPlans() {
+        return plans;
+    }
+}

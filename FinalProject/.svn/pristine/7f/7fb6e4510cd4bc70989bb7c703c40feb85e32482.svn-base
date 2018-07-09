@@ -1,0 +1,37 @@
+package com.example.katieko.finalproject;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
+
+/**
+ * Created by katieko on 5/1/17.
+ */
+
+public class ViewProfileActivity extends AppCompatActivity {
+    private TextView mFullNameTextView;
+    private TextView mBalanceTextView;
+    private TextView mUsernameTextView;
+    private TextView mEmailTextView;
+    private TextView mGenderTextView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_profile);
+
+        mFullNameTextView = (TextView) findViewById(R.id.fullNameTextView);
+        mBalanceTextView = (TextView) findViewById(R.id.balanceTextView);
+        mUsernameTextView = (TextView) findViewById(R.id.usernameTextView);
+        mEmailTextView = (TextView) findViewById(R.id.emailTextView);
+        mGenderTextView = (TextView) findViewById(R.id.genderTextView);
+
+        Bundle extras = getIntent().getExtras();
+        String fullName = extras.getString("User's name");
+        String email = extras.getString("User's email");
+
+        mFullNameTextView.setText(fullName);
+        mEmailTextView.setText(email);
+    }
+}

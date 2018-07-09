@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">BILLMO</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="create_plan">Create a New Plan</string>
+    <string name="join_plan">Join an Existing Plan</string>
+
+    <string name="profile_option">View Profile</string>
+    <string name="name_header">Name</string>
+    <string name="balance_header">Total Balance</string>
+    <string name="edit_profile">Edit Your Profile</string>
+
+    <string name="username_header">Username</string>
+    <string name="email_header">Email</string>
+    <string name="password_header">Password</string>
+    <string name="gender_header">Gender</string>
+    <string name="username_placer">username</string>
+    <string name="email_placer">email</string>
+    <string name="password_placer">password</string>
+
+    <string name="code_header">SEARCH CODE</string>
+    <string name="code_hint">i.e. xF7sq</string>
+
+    <string name="create_button">Create</string>
+    <string name="add_button">Add</string>
+
+    <string name="title_header">TITLE :</string>
+    <string name="bill_total_header">TOTAL BILL AMOUNT :</string>
+    <string name="tip_header">TIP :</string>
+    <string name="description_header">WHAT IS THIS FOR?</string>
+
+    <string name="ten_percent_tip">10%</string>
+    <string name="fifteen_percent_tip">15%</string>
+    <string name="twenty_percent_tip">20%</string>
+
+
+    <string-array name="gender_array">
+        <item> </item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Not Specified</item>
+    </string-array>
+</resources>

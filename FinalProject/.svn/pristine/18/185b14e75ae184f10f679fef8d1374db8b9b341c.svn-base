@@ -1,0 +1,76 @@
+package com.example.katieko.finalproject;
+
+import android.content.Intent;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by katieko on 4/29/17.
+ */
+
+public class PlansAdapter extends RecyclerView.Adapter<PlansAdapter.ViewHolder> {
+    public static final String TITLE = "TITLE";
+    public static final String TOTAL_AMOUNT = "TOTAL AMOUNT";
+    public static final String DESCRIPTION = "DESCRIPTION";
+    public static final String SEARCH_CODE = "SEARCH CODE";
+    public static final String PLAN = "PLAN";
+    ArrayList<PaymentPlan> plans;
+
+    public PlansAdapter(ArrayList<PaymentPlan> plans) {
+        this.plans = plans;
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        final View planListItem = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.plans_list_item, parent, false);
+        return new ViewHolder(planListItem);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        final PaymentPlan plan = plans.get(position);
+        String billTotal = "$" + String.valueOf(plan.getTotalAmount());
+
+        holder.titleView.setText(plan.getTitle());
+        holder.billTotalView.setText(billTotal);
+        holder.descriptionView.setText(plan.getDescription());
+
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DetailActivity.class);
+
+                v.getContext().startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return plans.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView titleView;
+        public TextView billTotalView;
+        public TextView descriptionView;
+        public View view;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            view = itemView;
+            titleView = (TextView) itemView.findViewById(R.id.titleTextView);
+            billTotalView = (TextView) itemView.findViewById(R.id.billTotalTextView);
+            descriptionView = (TextView) itemView.findViewById(R.id.descriptionTextView);
+        }
+    }
+}

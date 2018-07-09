@@ -1,0 +1,28 @@
+package com.example.katieko.finalproject;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+/**
+ * Created by katieko on 5/1/17.
+ */
+
+public class EditProfileActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_edit_profile);
+
+        final EditText editNameInput = (EditText) findViewById(R.id.nameEditor);
+        final EditText editUsernameInput = (EditText) findViewById(R.id.usernameEditor);
+        final EditText editBalanceInput = (EditText) findViewById(R.id.balanceEditor);
+        final EditText editEmailInput = (EditText) findViewById(R.id.emailEditor);
+        final Spinner genderSpinner = (Spinner) findViewById(R.id.genderSpinner);
+
+        Button saveButton = (Button) findViewById(R.id.save_button);
+        
+    }
+}

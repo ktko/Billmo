@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/create_plan_menu"
+        android:title="@string/create_plan"
+        />
+
+    <item
+        android:id="@+id/join_menu"
+        android:title="@string/join_plan"
+        />
+</menu>
