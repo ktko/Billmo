@@ -1,0 +1,65 @@
+package com.example.katieko.finalproject;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.firebase.ui.auth.AuthUI;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by katieko on 4/29/17.
+ */
+
+public class MainScreenActivity extends AppCompatActivity {
+    private RecyclerView mRecyclerView;
+    private ArrayList<PaymentPlan> mPlans = new ArrayList<>();
+    private PlansAdapter mPlansAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate( savedInstanceState );
+        setContentView(R.layout.activity_mainscreen);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        mPlansAdapter = new PlansAdapter(mPlans);
+        mRecyclerView.setAdapter(mPlansAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mainscreen_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.create_plan_menu:
+                startActivity(new Intent(getApplicationContext(), NewPlanActivity.class));
+                return true;
+            case R.id.join_menu:
+                startActivity(new Intent(getApplicationContext(), JoinPlanActivity.class));
+                return true;
+            case R.id.sign_out_menu:
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+}
